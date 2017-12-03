@@ -8,6 +8,7 @@ def welcome():
     return 'Calculate emissions or something lol'
 
 @app.route('/travel/car', methods=['POST'])
+def car():
     type_of_car = request.form['type']
     distance = request.form['distance_miles']
     return jsonify({'CO2e_MT' : calc(type_of_car, 1, distance)})
