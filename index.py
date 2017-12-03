@@ -49,23 +49,6 @@ def calc(travel_type,passengers,distance):
                   "bus": 0.000055164, "less_than_300": 0.0002535709,
                   "300_to_2300": 0.0001444006, "more_than_2300": 0.0001686838 }
     return emmissions[travel_type] * int(distance) * int(passengers)
-"""def car():
-    return 'Hello, World!'
-
-@app.route('/travel/train', methods=['POST'])
-def train():
-    return 'Hello, World!'
-
-@app.route('/travel/bus', methods=['POST'])
-def bus():
-    passengers = request.form['passengers']
-    distance = request.form['distance_miles']
-    emissions = 0.000_055_164 * int(passengers) * int(distance)
-    return jsonify({'CO2e_MT': emissions})
-
-@app.route('/travel/plane', methods=['POST'])
-def plane():
-    return 'Hello, World!'"""
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
