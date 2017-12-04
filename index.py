@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    return 'Calculate emissions or something lol'
+    return "You're at the cfc-api root";
 
 @app.route('/travel/car', methods=['POST'])
 def car():
@@ -41,6 +41,11 @@ def plane():
 @app.route('/event', methods=['POST'])
 def event():
     return 'Calculate emissions or something lol'
+
+@app.route('/cost', methods=['POST'])
+def cost():
+    tons = request.form['CO2e_MT']
+    return jsonify({'dollar_cost': tons * 36})
 
 def calc(travel_type,passengers,distance):
     emmissions = {"passenger": 0.000359995, "light_truck": 0.000492056,
